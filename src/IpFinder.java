@@ -5,7 +5,7 @@ import java.net.UnknownHostException;
 public class IpFinder{
     public static void main(String[] args) {
 
-        JFrame jFrame = new JFrame("IP finder ") ;
+        JFrame jFrame = new JFrame("IP finder ") ; 
         jFrame.setBounds(100,100,400,300);
         jFrame.setDefaultCloseOperation(jFrame.EXIT_ON_CLOSE);
         jFrame.setLayout(null) ;
@@ -25,14 +25,15 @@ public class IpFinder{
                 InetAddress ia = InetAddress.getByName(url) ;
                 String ip = ia.getHostAddress() ;
                 JOptionPane.showMessageDialog(jFrame,ip);
-            } catch (UnknownHostException ex) {
-                JOptionPane.showMessageDialog(jFrame,"URL not found ","Error", JOptionPane.ERROR_MESSAGE);
+            } catch (UnknownHostException ex) { // Error in case invalid URL 
+                JOptionPane.showMessageDialog(jFrame,"URL not found ","Error", JOptionPane.ERROR_MESSAGE); 
             }
         });
+        
         jFrame.add(label) ;
         jFrame.add(textField) ;
         jFrame.add(button) ;
-
-       jFrame.setVisible(true);
+        
+       jFrame.setVisible(true); // To display else only stored in memory
     }
 }
